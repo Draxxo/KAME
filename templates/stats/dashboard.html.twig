@@ -1,12 +1,17 @@
 {% extends 'base.html.twig' %}
 
 
-{% block stylesheets %}
-    {{ parent() }}
-    <link href="{{ asset('header.html.twig')}}" rel="stylesheet">
+{% block head %}
+    {{ include('stats/style.html.twig') }}
+
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
 {% endblock %}
 
+
 {% block body %}
+    {{ include ('stats/nav.html.twig') }}
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
