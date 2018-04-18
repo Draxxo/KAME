@@ -34,6 +34,37 @@ class StatsController extends Controller
 
         ]);
 
+        /* REQUETES */
+
+        //nb Eleve global
+        $eleveTotal = $db->select("SELECT * FROM users JOIN roles ON users.roleId = roles.roleId WHERE roleName='eleve'");
+        //nb Eleve en cours
+        $eleveActif = $db->select("SELECT * FROM users JOIN usergroups ON users.userId = usergroups.Users_userId
+                                      JOIN groups ON usergroups.Groups_groupId = groups.groupId
+                                      JOIN promotions ON groups.idPromotion = promotions.idPromotion WHERE promotionIsActive=true");
+        //nb user
+        $nbUser = $db->select("SELECT * FROM users");
+        //nb ticket
+        $nbTicket = $db->select("SELECT * FROM tickets");
+        //nb reservation
+        $nbReservation = $db->select("SELECT * FROM zonesreservations");
+        //nb intervenant
+        $nbIntervenant = $db->select("SELECT * FROM users JOIN roles ON users.roleId = roles.roleId WHERE roleName='intervenant'");
+        //mobilier fixe
+        $nbMobileFixe = $db->select("SELECT * FROM furnitures");
+        //mobilier mobile
+        $nbMobilierMobile = $db->select("SELECT * FROM equipments");
+
+        //Valeur d'initialisation en attendant les fausses données de test
+        $eleveTotal = 180;
+        $eleveActif = 60;
+        $nbUser = 220;
+        $nbTicket = 5;
+        $nbReservation = 580;
+        $nbIntervenant = 30;
+        $nbMobileFixe = 100;
+        $nbMobilierMobile = 20;
+
     }
 
     /**
