@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'stats/base.html.twig' %}
 
 
 {% block head %}
@@ -34,7 +34,7 @@
                     <!-- small box -->
                     <div class="small-box bg-gray">
                         <div class="inner">
-                            <h3><?php echo $eleveTotal; ?></h3>
+                            <h3><!--<?php echo $eleveTotal; ?>--></h3>
 
                             <p>Elèves au total</p>
                         </div>
@@ -48,7 +48,7 @@
                     <!-- small box -->
                     <div class="small-box bg-primary">
                         <div class="inner">
-                            <h3><?php echo $eleveActif; ?></h3>
+                            <h3><!--<?php echo $eleveActif; ?>--></h3>
 
                             <p>Elève présent à la NWS</p>
                         </div>
@@ -62,7 +62,7 @@
                     <!-- small box -->
                     <div class="small-box bg-yellow">
                         <div class="inner">
-                            <h3><?php echo $nbUser; ?></h3>
+                            <h3><!--<?php echo $nbUser; ?>--></h3>
 
                             <p>Utilisateurs enregistrés</p>
                         </div>
@@ -148,6 +148,6 @@
         </section>
         <!-- /.content -->
     </div>
-{{ include ('stats/footer.html.twig') }}
+    {{ include ('stats/footer.html.twig') }}
 {% endblock %}
 
