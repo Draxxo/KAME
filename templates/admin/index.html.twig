@@ -1,19 +1,51 @@
-{% extends 'base.html.twig' %}
+{% extends '/admin/adminBase.html.twig' %}
 
 {% block title %}{{ controller_name }}{% endblock %}
 
 {% block body %}
-<h1>Les views</h1>
-<ul>
-    <li><a href="{{asset('/admin/addEquipment')}}">Add equipment</a></li>
-    <li><a href="{{asset('/admin/updateEquipment')}}">Update equipment</a></li>
-    <li><a href="{{asset('/admin/addStudent')}}">Add student</a></li>
-    <li><a href="{{asset('/admin/updateStudent')}}">Update student</a></li>
-    <li><a href="{{asset('/admin/addTeacher')}}">Add teacher</a></li>
-    <li><a href="{{asset('/admin/updateTeacher')}}">Update Teacher</a></li>
-    <li><a href="{{asset('/admin/addGroup')}}">Add group</a></li>
-    <li><a href="{{asset('/admin/updateGroup')}}">Update group</a></li>
-    <li><a href="{{asset('/admin/addProms')}}">Add proms</a></li>
-    <li><a href="{{asset('/admin/updateProms')}}">Update Proms</a></li>
-</ul>
+<div class="container pt-md-5">
+    <h1>Pages administrateur</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Pages</th>
+                <th>Voir</th>
+                <th>Ajouter</th>
+                <th>Modifier</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Equipements</td>
+                <td><a href="#" class="btn btn-primary">SHOW</a></td>
+                <td><a href="{{asset('/admin/addEquipment')}}" class="btn btn-success">ADD</a></td>
+                <td><a href="{{asset('/admin/updateEquipment')}}" class="btn btn-warning">UPDATE</a></td>
+            </tr>
+            <tr>
+                <td>Etudiants</td>
+                <td><a href="#" class="btn btn-primary">SHOW</a></td>
+                <td><a href="{{asset('/admin/addStudent')}}" class="btn btn-success">ADD</a></td>
+                <td><a href="{{asset('/admin/updateStudent')}}" class="btn btn-warning">UPDATE</a></td>
+            </tr>
+            <tr>
+                <td>Intervenants</td>
+                <td><a href="#" class="btn btn-primary">SHOW</a></td>
+                <td><a href="{{asset('/admin/addTeacher')}}" class="btn btn-success">ADD</a></td>
+                <td><a href="{{asset('/admin/updateTeacher')}}" class="btn btn-warning">UPDATE</a></td>
+            </tr>
+            <tr>
+                <td>Groupes</td>
+                <td><a href="#" class="btn btn-primary">SHOW</a></td>
+                <td><a href="{{asset('/admin/addGroup')}}" class="btn btn-success">ADD</a></td>
+                <td><a href="{{asset('/admin/updateGroup')}}" class="btn btn-warning">UPDATE</a></td>
+            </tr>
+            <tr>
+                <td>Promotions</td>
+                <td><a href="#" class="btn btn-primary">SHOW</a></td>
+                <td><a href="{{asset('/admin/addProms')}}" class="btn btn-success">ADD</a></td>
+                <td><a href="{{asset('/admin/updateProms')}}" class="btn btn-warning">UPDATE</a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 {% endblock %}
